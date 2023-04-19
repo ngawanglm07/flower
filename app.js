@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const passport = require("passport");
-const session = require("express-session");
+const session = require("cookie-session");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 require('mongodb')
