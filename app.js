@@ -8,6 +8,7 @@ const passport = require("passport");
 const session = require("express-session");
 const passportLocalMongoose = require("passport-local-mongoose");
 
+require('mongodb')
 const app = express();
 
 app.use(express.static("public"));
@@ -25,7 +26,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(`mongodb+srv://ngawang:sexyass@cluster0.7h0rl9g.mongodb.net/autth?retryWrites=true&w=majority`,{useNewUrlParser:true});
+mongoose.connect(`mongodb+srv://ngawang:sexyass@cluster0.7h0rl9g.mongodb.net/autth?retryWrites=true&w=majority`,{useNewUrlParser:true , useUnifiedTopology: true});
 const userSchema = new mongoose.Schema({
     email:String,
     password:String
